@@ -1,0 +1,90 @@
+Parent Thread is start executing
+Child Thread 0	 child start = 1	 end = 10	 sum = 55
+Child Thread 1	 child start = 11	 end = 20	 sum = 155
+Child Thread 2	 child start = 21	 end = 30	 sum = 255
+Child Thread 3	 child start = 31	 end = 40	 sum = 355
+Child Thread 4	 child start = 41	 end = 50	 sum = 455
+Child Thread 5	 child start = 51	 end = 60	 sum = 555
+Child Thread 6	 child start = 61	 end = 70	 sum = 655
+Child Thread 7	 child start = 71	 end = 80	 sum = 755
+Child Thread 8	 child start = 81	 end = 90	 sum = 855
+Child Thread 9	 child start = 91	 end = 100	 sum = 955
+Toatl sum = 5050
+Parent end of execution
+Child Thread Number 0	 GrandChild Thread Number = 1	 GrandChild Start = 1	 GrandChild End = 5	 Grand child sum = 15
+Child Thread Number 0	 GrandChild Thread Number = 2	 GrandChild Start = 6	 GrandChild End = 10	 Grand child sum = 40
+Child Thread Number 0	 child start = 1	 end = 10	 Child sum = 55
+Child Thread Number 3	 GrandChild Thread Number = 4	 GrandChild Start = 11	 GrandChild End = 15	 Grand child sum = 65
+Child Thread Number 3	 GrandChild Thread Number = 5	 GrandChild Start = 16	 GrandChild End = 20	 Grand child sum = 90
+Child Thread Number 3	 child start = 11	 end = 20	 Child sum = 155
+Child Thread Number 6	 GrandChild Thread Number = 7	 GrandChild Start = 21	 GrandChild End = 25	 Grand child sum = 115
+Child Thread Number 6	 GrandChild Thread Number = 8	 GrandChild Start = 26	 GrandChild End = 30	 Grand child sum = 140
+Child Thread Number 6	 child start = 21	 end = 30	 Child sum = 255
+Child Thread Number 9	 GrandChild Thread Number = 10	 GrandChild Start = 31	 GrandChild End = 35	 Grand child sum = 165
+Child Thread Number 9	 GrandChild Thread Number = 11	 GrandChild Start = 36	 GrandChild End = 40	 Grand child sum = 190
+Child Thread Number 9	 child start = 31	 end = 40	 Child sum = 355
+Child Thread Number 12	 GrandChild Thread Number = 13	 GrandChild Start = 41	 GrandChild End = 45	 Grand child sum = 215
+Child Thread Number 12	 GrandChild Thread Number = 14	 GrandChild Start = 46	 GrandChild End = 50	 Grand child sum = 240
+Child Thread Number 12	 child start = 41	 end = 50	 Child sum = 455
+Child Thread Number 15	 GrandChild Thread Number = 16	 GrandChild Start = 51	 GrandChild End = 55	 Grand child sum = 265
+Child Thread Number 15	 GrandChild Thread Number = 17	 GrandChild Start = 56	 GrandChild End = 60	 Grand child sum = 290
+Child Thread Number 15	 child start = 51	 end = 60	 Child sum = 555
+Child Thread Number 18	 GrandChild Thread Number = 19	 GrandChild Start = 61	 GrandChild End = 65	 Grand child sum = 315
+Child Thread Number 18	 GrandChild Thread Number = 20	 GrandChild Start = 66	 GrandChild End = 70	 Grand child sum = 340
+Child Thread Number 18	 child start = 61	 end = 70	 Child sum = 655
+Child Thread Number 21	 GrandChild Thread Number = 22	 GrandChild Start = 71	 GrandChild End = 75	 Grand child sum = 365
+Child Thread Number 21	 GrandChild Thread Number = 23	 GrandChild Start = 76	 GrandChild End = 80	 Grand child sum = 390
+Child Thread Number 21	 child start = 71	 end = 80	 Child sum = 755
+Child Thread Number 24	 GrandChild Thread Number = 25	 GrandChild Start = 81	 GrandChild End = 85	 Grand child sum = 415
+Child Thread Number 24	 GrandChild Thread Number = 26	 GrandChild Start = 86	 GrandChild End = 90	 Grand child sum = 440
+Child Thread Number 24	 child start = 81	 end = 90	 Child sum = 855
+Child Thread Number 27	 GrandChild Thread Number = 28	 GrandChild Start = 91	 GrandChild End = 95	 Grand child sum = 465
+Child Thread Number 27	 GrandChild Thread Number = 29	 GrandChild Start = 96	 GrandChild End = 100	 Grand child sum = 490
+Child Thread Number 27	 child start = 91	 end = 100	 Child sum = 955
+Toatl sum = 5050
+Parent end of execution
+Parent Thread is start executing
+Child Thread 0	 child start = 1	 end = 100	 sum = 5050
+Child Thread 1	 child start = 101	 end = 200	 sum = 15050
+Child Thread 2	 child start = 201	 end = 300	 sum = 25050
+Child Thread 3	 child start = 301	 end = 400	 sum = 35050
+Child Thread 4	 child start = 401	 end = 500	 sum = 45050
+Child Thread 5	 child start = 501	 end = 600	 sum = 55050
+Child Thread 6	 child start = 601	 end = 700	 sum = 65050
+Child Thread 7	 child start = 701	 end = 800	 sum = 75050
+Child Thread 8	 child start = 801	 end = 900	 sum = 85050
+Child Thread 9	 child start = 901	 end = 1000	 sum = 95050
+Toatl sum = 500500
+Parent end of execution
+Child Thread Number 0	 GrandChild Thread Number = 1	 GrandChild Start = 1	 GrandChild End = 50	 Grand child sum = 1275
+Child Thread Number 0	 GrandChild Thread Number = 2	 GrandChild Start = 51	 GrandChild End = 100	 Grand child sum = 3775
+Child Thread Number 0	 child start = 1	 end = 100	 Child sum = 5050
+Child Thread Number 3	 GrandChild Thread Number = 4	 GrandChild Start = 101	 GrandChild End = 150	 Grand child sum = 6275
+Child Thread Number 3	 GrandChild Thread Number = 5	 GrandChild Start = 151	 GrandChild End = 200	 Grand child sum = 8775
+Child Thread Number 3	 child start = 101	 end = 200	 Child sum = 15050
+Child Thread Number 6	 GrandChild Thread Number = 7	 GrandChild Start = 201	 GrandChild End = 250	 Grand child sum = 11275
+Child Thread Number 6	 GrandChild Thread Number = 8	 GrandChild Start = 251	 GrandChild End = 300	 Grand child sum = 13775
+Child Thread Number 6	 child start = 201	 end = 300	 Child sum = 25050
+Child Thread Number 9	 GrandChild Thread Number = 10	 GrandChild Start = 301	 GrandChild End = 350	 Grand child sum = 16275
+Child Thread Number 9	 GrandChild Thread Number = 11	 GrandChild Start = 351	 GrandChild End = 400	 Grand child sum = 18775
+Child Thread Number 9	 child start = 301	 end = 400	 Child sum = 35050
+Child Thread Number 12	 GrandChild Thread Number = 13	 GrandChild Start = 401	 GrandChild End = 450	 Grand child sum = 21275
+Child Thread Number 12	 GrandChild Thread Number = 14	 GrandChild Start = 451	 GrandChild End = 500	 Grand child sum = 23775
+Child Thread Number 12	 child start = 401	 end = 500	 Child sum = 45050
+Child Thread Number 15	 GrandChild Thread Number = 16	 GrandChild Start = 501	 GrandChild End = 550	 Grand child sum = 26275
+Child Thread Number 15	 GrandChild Thread Number = 17	 GrandChild Start = 551	 GrandChild End = 600	 Grand child sum = 28775
+Child Thread Number 15	 child start = 501	 end = 600	 Child sum = 55050
+Child Thread Number 18	 GrandChild Thread Number = 19	 GrandChild Start = 601	 GrandChild End = 650	 Grand child sum = 31275
+Child Thread Number 18	 GrandChild Thread Number = 20	 GrandChild Start = 651	 GrandChild End = 700	 Grand child sum = 33775
+Child Thread Number 18	 child start = 601	 end = 700	 Child sum = 65050
+Child Thread Number 21	 GrandChild Thread Number = 22	 GrandChild Start = 701	 GrandChild End = 750	 Grand child sum = 36275
+Child Thread Number 21	 GrandChild Thread Number = 23	 GrandChild Start = 751	 GrandChild End = 800	 Grand child sum = 38775
+Child Thread Number 21	 child start = 701	 end = 800	 Child sum = 75050
+Child Thread Number 24	 GrandChild Thread Number = 25	 GrandChild Start = 801	 GrandChild End = 850	 Grand child sum = 41275
+Child Thread Number 24	 GrandChild Thread Number = 26	 GrandChild Start = 851	 GrandChild End = 900	 Grand child sum = 43775
+Child Thread Number 24	 child start = 801	 end = 900	 Child sum = 85050
+Child Thread Number 27	 GrandChild Thread Number = 28	 GrandChild Start = 901	 GrandChild End = 950	 Grand child sum = 46275
+Child Thread Number 27	 GrandChild Thread Number = 29	 GrandChild Start = 951	 GrandChild End = 1000	 Grand child sum = 48775
+Child Thread Number 27	 child start = 901	 end = 1000	 Child sum = 95050
+Toatl sum = 500500
+Parent end of execution
