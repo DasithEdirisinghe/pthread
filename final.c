@@ -1,13 +1,24 @@
+/*
+Go to the file directory and open the terminal
+then type this command:
+	gcc -o final final.c -lpthread
+final and final.c are the file names.you can change those
+then type this in the terminal:
+	./final 10000 10 10
+result will be saved inside the result.txt file
+*/
+
+
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-int tot_sum2;
-int sum2[100];
+long tot_sum2;
+long sum2[2500];
 
-int tot_sum3;
-int sum3[100];
+long tot_sum3;
+long sum3[2500];
 
 
 void *runner(void *param);
@@ -17,11 +28,11 @@ void *append_file(char *str);
 void *run_part2();
 void *run_part3();
 
-pthread_t tid[60];
-pthread_attr_t attr[60];
+pthread_t tid[2600];
+pthread_attr_t attr[2600];
 
-pthread_t tid3[60];
-pthread_attr_t attr3[60];
+pthread_t tid3[2600];
+pthread_attr_t attr3[2600];
 
 pthread_t maint[2];
 pthread_attr_t mainattr[2];
@@ -36,28 +47,34 @@ int main(int argc,char* argv[])
 	
 	int arg2=atoi(b);
 	int arg1=atoi(a);
-	int i;
-	int j;
-	char argument[100];
+	long i;
+	long j;
+	char argument[2500];
 	int master = argc;
 	char string[500];
 	
 	printf("Parent Thread is start executing\n");
-	snprintf(string,500,"Parent Thread is start executing\n");
+	snprintf(string,2500,"Parent Thread is start executing\n");
 	append_file(string);
 	
 	
 	void *run_part3()
 	{
+	if(master == 3)
+	{
+	printf("Input valid input with three arguments");
+	}
+	else
+	{
 	
 	char *c = argv[3];
 	int arg3 = atoi(c);
-	int temp = -arg3;
+	long temp = -arg3;
 	
-	for(int i = 0;i<arg2*arg3+arg2 ; i=i+arg3+1)
+	for(i = 0;i<arg2*arg3+arg2 ; i=i+arg3+1)
 	{
 		temp +=arg3;
-		snprintf(argument,100,"%d,%d,%d,%d,%d\n",i,(temp/arg3)*(arg1/arg2)+1,(temp/arg3+1)*(arg1/arg2),arg3,arg1/arg2);
+		snprintf(argument,2500,"%ld,%ld,%ld,%d,%d\n",i,(temp/arg3)*(arg1/arg2)+1,(temp/arg3+1)*(arg1/arg2),arg3,arg1/arg2);
 	
 		
 		pthread_attr_init(&attr3[i]);
@@ -66,12 +83,12 @@ int main(int argc,char* argv[])
 		
 		pthread_join(tid3[i],NULL);
 	}	
-	for (int j =0 ; j<arg2*arg3+arg2 ; j=j+arg3+1)
+	for (j =0 ; j<arg2*arg3+arg2 ; j=j+arg3+1)
 	{
 		tot_sum3+=sum3[j];
 	}
-	printf("Toatl sum = %d\n",tot_sum3);
-	snprintf(string,500,"Toatl sum = %d\n",tot_sum3);
+	printf("Toatl sum = %ld\n",tot_sum3);
+	snprintf(string,500,"Toatl sum = %ld\n",tot_sum3);
 	append_file(string);
 	printf("Parent end of execution\n");
 	snprintf(string,500,"Parent end of execution\n");
@@ -80,16 +97,17 @@ int main(int argc,char* argv[])
 	
 
 	}
+	}
 	
 	
 	void *run_part2(){
 	
 	
-	for(int i = 0;i<arg2 ; i++)
+	for(i = 0;i<arg2 ; i++)
 	{
 		
 		
-		snprintf(argument,100,"%d,%d,%d\n",i,i*(arg1/arg2)+1,(i+1)*(arg1/arg2));
+		snprintf(argument,2500,"%ld,%ld,%ld\n",i,i*(arg1/arg2)+1,(i+1)*(arg1/arg2));
 	
 		pthread_attr_init(&attr[i]);
 		
@@ -97,16 +115,16 @@ int main(int argc,char* argv[])
 		
 		pthread_join(tid[i],NULL);
 	}	
-	for (int j =0 ; j< arg2 ; j++)
+	for (j =0 ; j< arg2 ; j++)
 	{
 		
 		tot_sum2+=sum2[j];
 		}
-	printf("Toatl sum = %d\n",tot_sum2);
-	snprintf(string,500,"Toatl sum = %d\n",tot_sum2);
+	printf("Toatl sum = %ld\n",tot_sum2);
+	snprintf(string,2500,"Toatl sum = %ld\n",tot_sum2);
 	append_file(string);
 	printf("Parent end of execution\n");
-	snprintf(string,500,"Parent end of execution\n");
+	snprintf(string,2500,"Parent end of execution\n");
 	append_file(string);
 	pthread_exit(NULL);
 
@@ -128,11 +146,11 @@ void *runner(void *param)
 	char *str = (char *)param;
 	
 	int count =0;
-	int idx;
-	int start;
-	int end;
+	long idx;
+	long start;
+	long end;
 	char *pt;
-	char string[500];
+	char string[2500];
 	
     	pt = strtok (str,",");
     	
@@ -157,8 +175,8 @@ void *runner(void *param)
 	{
 		sum2[idx]+=i;
 	}
-	printf("Child Thread %d\t child start = %d\t end = %d\t sum = %d\n",idx,start,end,sum2[idx]);
-	snprintf(string,500,"Child Thread %d\t child start = %d\t end = %d\t sum = %d\n",idx,start,end,sum2[idx]);
+	printf("Child Thread %ld\t child start = %ld\t end = %ld\t sum = %ld\n",idx,start,end,sum2[idx]);
+	snprintf(string,2500,"Child Thread %ld\t child start = %ld\t end = %ld\t sum = %ld\n",idx,start,end,sum2[idx]);
 	append_file(string);	
 	pthread_exit(NULL);
 }
@@ -166,16 +184,16 @@ void *runner(void *param)
 void *child_runner(void *param)
 {
 	char *str = (char *)param;
-	char arg[50];
+	char arg[500];
 	int temp=-1;
 	int count =0;
-	int idx;
-	int start;
-	int end;
+	long idx;
+	long start;
+	long end;
 	int arg3;
 	int size;
 	char *pt;
-	char string[500];
+	char string[2500];
 	
     	pt = strtok (str,",");
     	
@@ -204,11 +222,11 @@ void *child_runner(void *param)
         pt = strtok (NULL, ",");
     	}
     	
-	for (int i=idx+1;i<=idx+arg3; i++)
+	for (long i=idx+1;i<=idx+arg3; i++)
 	{
 	temp+=1;
 	
-	snprintf(arg,50,"%d,%d,%d,%d\n",start+(size/arg3)*temp,(start+(size/arg3)*temp)+(size/arg3)-1,idx,i);
+	snprintf(arg,2500,"%ld,%ld,%ld,%ld\n",start+(size/arg3)*temp,(start+(size/arg3)*temp)+(size/arg3)-1,idx,i);
 	
 	pthread_attr_init(&attr3[i]);
 		
@@ -217,8 +235,8 @@ void *child_runner(void *param)
 	pthread_join(tid3[i],NULL);
 		
 	}
-	printf("Child Thread Number %d\t child start = %d\t end = %d\t Child sum = %d\n",idx,start,end,sum3[idx]);
-	snprintf(string,500,"Child Thread Number %d\t child start = %d\t end = %d\t Child sum = %d\n",idx,start,end,sum3[idx]);
+	printf("Child Thread Number %ld\t child start = %ld\t end = %ld\t Child sum = %ld\n",idx,start,end,sum3[idx]);
+	snprintf(string,2500,"Child Thread Number %ld\t child start = %ld\t end = %ld\t Child sum = %ld\n",idx,start,end,sum3[idx]);
 	append_file(string);
 	pthread_exit(NULL);
 }
@@ -226,15 +244,15 @@ void *child_runner(void *param)
 void *grand_runner(void *param)
 {
 	char *str = (char *)param;
-	int grand_sum=0;
+	long grand_sum=0;
 	int count =0;
-	int idx;
-	int start;
-	int end;
-	int i;
-	int j;
+	long idx;
+	long start;
+	long end;
+	long i;
+	long j;
 	char *pt;
-	char string[500];
+	char string[2500];
 	
 	pt = strtok (str,",");
 	
@@ -263,8 +281,8 @@ void *grand_runner(void *param)
 		grand_sum += j;
 	}	
 	sum3[idx]+=grand_sum;
-	printf("Child Thread Number %d\t GrandChild Thread Number = %d\t GrandChild Start = %d\t GrandChild End = %d\t Grand child sum = %d\n",idx,i,start,end,grand_sum);
-	snprintf(string,500,"Child Thread Number %d\t GrandChild Thread Number = %d\t GrandChild Start = %d\t GrandChild End = %d\t Grand child sum = %d\n",idx,i,start,end,grand_sum);
+	printf("Child Thread Number %ld\t GrandChild Thread Number = %ld\t GrandChild Start = %ld\t GrandChild End = %ld\t Grand child sum = %ld\n",idx,i,start,end,grand_sum);
+	snprintf(string,2500,"Child Thread Number %ld\t GrandChild Thread Number = %ld\t GrandChild Start = %ld\t GrandChild End = %ld\t Grand child sum = %ld\n",idx,i,start,end,grand_sum);
 	append_file(string);
 	pthread_exit(NULL);
 	
